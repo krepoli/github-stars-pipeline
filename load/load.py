@@ -4,17 +4,14 @@ import duckdb
 
 
 def extract_zip_file(zip_file_path, target_dir): 
-    # implement logic to extract zip file here 
     with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
         zip_ref.extractall(target_dir)
 
 
 def load_json_gz_files_in_duck_db(json_dir): 
-    # implement logic to load json.gz files in duckdb here
     con = duckdb.connect("github_stars.db")
     con.sql("CREATE SCHEMA IF NOT EXISTS source")
     con.sql(f"CREATE TABLE source.src_gharchive_new AS SELECT * FROM '{json_dir}/*.json.gz';")
-    #con.sql("CREATE TABLE source.src_gharchive_new AS SELECT * FROM 'gharchive_sample/*.json.gz';")
     con.close()
 
 
