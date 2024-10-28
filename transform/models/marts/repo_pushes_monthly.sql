@@ -6,4 +6,4 @@ Select distinct
   sum(push_count) over (partition by repo_id order by date_month) AS cumul_push_count
 from {{ ref('stg_gharchive') }} 
 where event_type = 'Push'
-group by repo_id, repo_name, date_month
+group by 1, 2, 3

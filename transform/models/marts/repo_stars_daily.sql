@@ -6,4 +6,4 @@ Select distinct
   sum(star_count) over (partition by repo_id order by date_day) AS cumul_star_count
 from {{ ref('stg_gharchive') }} 
 where event_type = 'Watch'
-group by repo_id, repo_name, date_day
+group by 1, 2, 3
