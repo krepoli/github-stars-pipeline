@@ -26,4 +26,4 @@ How often should the data be updated?
 
 * Daily
 
-![dbt docs image](dbt_dag.png)
+![dbt docs image](docs/dbt_dag.png)
