@@ -25,3 +25,5 @@ What is the timeline of the reports?
 How often should the data be updated?
 
 * Daily
+
+![dbt docs image](docs/dbt_dag.png)
